@@ -48,11 +48,10 @@ def make_a_poem() -> str:
 
     adv = random.choice(adverbs)
 
-    for vowels in "aeiou":
-        if adj_one[0] != vowels:
-            preamble = "A"
-        else:
-            preamble = "An"
+    if "aeiou".find(adj_one[0]) != -1:
+        preamble = "An"
+    else:
+        preamble = "A"
 
     poem = (
         f"{preamble} {adj_one} {noun_one}\n\n"
